@@ -26,12 +26,11 @@ function App() {
   }
 
   const validate = async () => {
-    console.log(pin)
     const validate = await service.checkValidate()
-     setMessage(validate ? 'correct' : 'wrong')
-     setTimeout(() => {
+    setMessage(validate ? 'correct' : 'wrong')
+    setTimeout(() => {
       setMessage('')
-     }, 2000)
+    }, 2000)
   }
 
   useEffect(() => { // check change pinLength
@@ -39,10 +38,9 @@ function App() {
   }, [pinLength])
 
   useEffect(() => { // check change darkMode
-    console.log('change dark Mode')
     const classList = document.getElementsByTagName('body')[0].classList
     classList.add('dark')
-    if(darkMode) {
+    if (darkMode) {
       classList.remove('light')
       !classList.contains('dark') && classList.add('dark')
     }
@@ -51,7 +49,7 @@ function App() {
       !classList.contains('light') && classList.add('light')
     }
   }, [darkMode])
-  
+
 
   useEffect(() => { // Arrange Theme
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -63,12 +61,12 @@ function App() {
     <div className="App">
       <PinInputs onPinChanged={onPinChanged} pasteCopiedText={arr => setPin([...arr])} pin={pin} pinLength={pinLength} />
       <button className="validate" onClick={validate} disabled={pin.includes(undefined)}>Validate</button>
-      <Setting show={showModal} position="center" closeModal={() => setShowModal(false)}/>
+      <Setting show={showModal} position="center" closeModal={() => setShowModal(false)} />
       <div className={`message ${message === 'correct' ? 'correct' : 'wrong'}`}>
-        { (message && message !== '') && (message === 'correct' ? 'The pin is correct.' : 'The pin is wrong.') }
+        {(message && message !== '') && (message === 'correct' ? 'The pin is correct.' : 'The pin is wrong.')}
       </div>
       <div className="setting-icon">
-        <img className="" src={SettingSvg} alt="Your SVG" onClick={() => setShowModal(true)}/>
+        <img className="" src={SettingSvg} alt="Your SVG" onClick={() => setShowModal(true)} />
       </div>
     </div>
   )
