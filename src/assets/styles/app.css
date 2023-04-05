@@ -1,0 +1,70 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  margin: 10px 25px;
+  text-align: center;
+  font-size: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+}
+
+input[type="number"] {
+  background-color: transparent;
+  width: 35px;
+  text-align: center;
+  font-size: 12px;
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--main-color);
+}
+
+button.validate {
+  margin-top: 30px;
+  background-color: var(--main-color);
+  border: none;
+  padding: 12px 20px;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer
+}
+
+button.validate:disabled,
+button.validate[disabled] {
+  cursor: not-allowed;
+  opacity: .4
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.message.wrong {
+  color: var(--error-color);
+}
+
+.message.correct {
+  color: var(--correct-color);
+}
+
+img {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  cursor: pointer;
+}

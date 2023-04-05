@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+  --color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+  --main-color: #2E85C7;
+  --border-color: #656565;
+  --toggle-bg: #454545;
+  --toggle-color: #2196F3;
+  --error-color: #FF7070;
+  --correct-color: #70FFC1
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--color);
+  background-color: var(--bg-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button {
+  font-family: 'Lato', sans-serif;
+  color: var(--color)
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color: #213547;
+    --bg-color: #FFFFFF;
+    --border-color: #A7A7A7;
+    --toggle-bg: #CCCCCC;
+  }
+  button {
+    color: rgba(255, 255, 255, 0.87)
+  }
+}
+
+body.light {
+  --color: #213547;
+  --bg-color: #FFFFFF;
+  --border-color: #A7A7A7;
+  --toggle-bg: #CCCCCC;
+  button {
+    color: rgba(255, 255, 255, 0.87)
+  }
+}
+
+body.dark {
+  --color: rgba(255, 255, 255, 0.87);
+  --bg-color: #242424;
+  --main-color: #2E85C7;
+  --border-color: #656565;
+  --toggle-bg: #454545;
+  --toggle-color: #2196F3;
+  --error-color: #FF7070;
+  --correct-color: #70FFC1
+}

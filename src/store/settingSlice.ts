@@ -2,29 +2,33 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface SettingState {
-    value: number
+    secretMode: boolean,
+    darkMode: boolean,
+    pinLength: number
 }
 
 const initialState: SettingState = {
-    value: 0,
+    secretMode: false,
+    darkMode: true,
+    pinLength: 4
 }
 
 export const settingSlice = createSlice({
     name: 'setting',
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1
+        changeSecretMode: (state, action: PayloadAction<boolean>) => {
+            state.secretMode = action.payload
         },
-        decrement: (state) => {
-            state.value -= 1
+        changeTheme: (state, action: PayloadAction<boolean>) => {
+            state.darkMode = action.payload
         },
-        incrementByAmount: (state, action: PayloadAction<number>) => {
-            state.value += action.payload
-        },
+        changePinLength: (state, action: PayloadAction<number>) => {
+            state.pinLength = action.payload
+        }
     },
 })
 
-export const { increment, decrement, incrementByAmount } = settingSlice.actions
+export const { changeSecretMode, changePinLength, changeTheme } = settingSlice.actions
 
 export default settingSlice.reducer
